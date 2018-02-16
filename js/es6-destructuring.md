@@ -29,4 +29,8 @@ const { first, last, address: { city: myCity } } = person;
 
 // destructure nested keys safely
 const { first, last, address: { city } = {} } = person;
+
+// destructure rest of the values
+const { first, ...rest } = person; // => rest will have all keys but first
+
 ```
