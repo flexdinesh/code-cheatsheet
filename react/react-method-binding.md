@@ -43,8 +43,9 @@
 
   ```
 
-
   4. Use arrow function while defining method (ES6 approach - recommended)
+
+    This is ES6 stage-2 feature, so you might need to enable `transform-class-properties` in babel.
 
   ```js
   // define method
