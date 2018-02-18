@@ -1,10 +1,11 @@
 # Code Cheats
-Quick reference code snippets curated from various sources for search-and-find dev stuff.
 
+Quick reference code snippets curated from various sources for search-and-find dev stuff.
 
 - [JavaScript](https://github.com/flexdinesh/code-snippets/tree/master/js)
   - [Access Nested Objects Using Array Reduce](https://github.com/flexdinesh/code-snippets/blob/master/js/access-objects-array-reduce.md)
   - [ES6 Destructuring Assignment](https://github.com/flexdinesh/code-snippets/blob/master/js/es6-destructuring.md)
+  - [Short Circuit Assignment](https://github.com/flexdinesh/code-cheats/blob/master/js/short-circuit-assignment.md)
 - [React](https://github.com/flexdinesh/code-snippets/tree/master/react)
   - [Component](https://github.com/flexdinesh/code-snippets/blob/master/react/component.md)
   - [Functional Component](https://github.com/flexdinesh/code-snippets/blob/master/react/functional-component.md)
