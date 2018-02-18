@@ -1,7 +1,6 @@
 ## React Functional Component
 
 ```js
-import React from 'react';
 import PropTypes from 'prop-types';
 
 const HelloWorld = ({name}) => (
