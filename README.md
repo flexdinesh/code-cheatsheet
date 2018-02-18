@@ -1,5 +1,5 @@
-# code-snippets
-Quick reference code snippets curated from various sources that I use for my own search-and-find dev stuff.
+# Code Cheats
+Quick reference code snippets curated from various sources for search-and-find dev stuff.
 
 
 - [JavaScript](https://github.com/flexdinesh/code-snippets/tree/master/js)
