@@ -1,0 +1,18 @@
+{
+  "name": "code-cheatsheet",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/flexdinesh/code-cheatsheet"
+  },
+  "scripts": {
+    "lint": "todo"
+  },
+  "devDependencies": {
+    "typescript": ">=3.0.0"
+  },
+  "engines": {
+    "yarn": ">=1.22.0",
+    "npm": "please-use-yarn"
+  }
+}
