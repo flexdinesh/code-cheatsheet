@@ -50,3 +50,38 @@ export const walkObject = (
 
   walk(root);
 };
+
+/**
+ * Performs a deep merge of objects and returns new object. Does not modify
+ * objects (immutable) and merges arrays via concatenation.
+ *
+ * @param {...object} objects - Objects to merge
+ * @returns {object} New object with merged key/values
+ */
+ export const mergeDeep = (...args: Array<Record<string, any>>) => {
+  const mergeObject = (...objects: Array<Record<string, any>>) => {
+    const isObject = (obj: unknown) => obj && typeof obj === 'object';
+
+    return objects.reduce((prev, obj) => {
+      Object.keys(obj).forEach(key => {
+        const pVal = prev[key];
+        const oVal = obj[key];
+
+        if (Array.isArray(pVal) && Array.isArray(oVal)) {
+          // eslint-disable-next-line no-param-reassign
+          prev[key] = pVal.concat(...oVal);
+        } else if (isObject(pVal) && isObject(oVal)) {
+          // eslint-disable-next-line no-param-reassign
+          prev[key] = mergeObject(pVal as Record<string, unknown>, oVal as Record<string, unknown>);
+        } else {
+          // eslint-disable-next-line no-param-reassign
+          prev[key] = oVal;
+        }
+      });
+
+      return prev;
+    }, {});
+  };
+
+  return mergeObject(...args);
+};
