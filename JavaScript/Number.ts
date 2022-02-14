@@ -6,5 +6,5 @@
  * @param num 
  */
 const roundNumber = (num: number) => {
-  Math.round((num + Number.EPSILON) * 100) / 100;
+  return Math.round((num + Number.EPSILON) * 100) / 100;
 };
