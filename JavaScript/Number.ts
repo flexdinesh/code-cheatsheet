@@ -8,3 +8,7 @@
 const roundNumber = (num: number) => {
   return Math.round((num + Number.EPSILON) * 100) / 100;
 };
+
+const randomInteger = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+randomInteger(1, 10); // -> 7

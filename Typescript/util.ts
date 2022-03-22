@@ -10,3 +10,8 @@ const obj = {
 };
 /** Object.keys to typed array */
 const keys = Object.keys(obj) as Array<keyof typeof obj>;
+
+/** Deeply convert all nested keys into partials */
+type RecursivePartial<T> = {
+  [P in keyof T]?: RecursivePartial<T[P]>;
+};
