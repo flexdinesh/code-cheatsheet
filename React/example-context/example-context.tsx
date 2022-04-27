@@ -6,23 +6,19 @@ type ExampleContext = {
   changeName: (n: string) => void;
 };
 
-const ExampleContext = React.createContext<ExampleContext>(
-  undefined as unknown as ExampleContext
+const ExampleContext = React.createContext<ExampleContext | undefined>(
+  undefined
 );
 
 const ExampleProvider: React.FC = ({ children }) => {
   const [name, setName] = React.useState('');
 
-  const changeName = React.useCallback(
-    (n: string) => {
-      setName(n);
-    },
-    [setName]
-  );
-
   const contextValue = React.useMemo(() => {
+    const changeName = (n: string) => {
+      setName(n);
+    };
     return { name, changeName };
-  }, [name, changeName]);
+  }, [name, setName]);
 
   return (
     <ExampleContext.Provider value={contextValue}>
@@ -33,7 +29,7 @@ const ExampleProvider: React.FC = ({ children }) => {
 
 const useExampleContext = () => {
   const exampleContext = React.useContext(ExampleContext);
-  if (typeof exampleContext === undefined) {
+  if (exampleContext === undefined) {
     throw new Error('ExampleProvider is not wrapped in the tree');
   }
 
